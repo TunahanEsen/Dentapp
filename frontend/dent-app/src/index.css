@@ -1,0 +1,169 @@
+@keyframes hizmetPulse {
+  0%, 100% { transform: scale(1);    opacity: 1;   }
+  50%       { transform: scale(1.1); opacity: 0.75; }
+}
+
+@keyframes menuAc {
+  from { opacity: 0; transform: translateY(-6px); }
+  to   { opacity: 1; transform: translateY(0);    }
+}
+
+.home-mobil-nav {
+  animation: menuAc 0.18s ease;
+}
+
+* { box-sizing: border-box; }
+
+body { margin: 0; font-family: 'Segoe UI', sans-serif; }
+
+#root {
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* ── Mobil: 768px ────────────────────────────────────────────── */
+@media (max-width: 768px) {
+
+  /* ─ Dashboard sidebar ─ */
+  .dash-sidebar {
+    position: fixed !important;
+    left: -260px !important;
+    transition: left 0.25s ease;
+    z-index: 160;
+  }
+  .dash-sidebar.acik {
+    left: 0 !important;
+  }
+  .mobil-bar { display: flex !important; }
+  .dash-main { padding-top: 56px; }
+
+  /* ─ Görevler kanban ─ */
+  .gorev-icerik {
+    flex-direction: column !important;
+  }
+  .gorev-kanban {
+    grid-template-columns: 1fr !important;
+  }
+  .gorev-detay {
+    width: 100% !important;
+    max-width: 100% !important;
+    position: static !important;
+    margin-top: 16px;
+    flex-shrink: 0;
+  }
+
+  /* ─ İşlem Kaydı split panel ─ */
+  .islem-icerik {
+    grid-template-columns: 1fr !important;
+  }
+  .islem-ozet {
+    grid-template-columns: 1fr 1fr !important;
+  }
+
+  /* ─ Genel Bakış orta grid ─ */
+  .genel-bakis-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ─ Finans grafik grid ─ */
+  .grafik-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ─ Nöbet takvim ─ */
+  .takvim-izgara {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 4px !important;
+  }
+
+  /* ─ Fiyat hesaplama ─ */
+  .fiyat-hesap {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ─ Tablo yatay kaydırma ─ */
+  .tablo-sarici {
+    overflow-x: auto !important;
+  }
+
+  /* ─ Hakkımızda bölümü ─ */
+  .hakkimizda-ic {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  /* ─ İletişim / randevu grid ─ */
+  .iletisim-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* ─ Ana sayfa header nav ─ */
+  .home-nav {
+    display: none !important;
+  }
+  .home-hamburger {
+    display: flex !important;
+  }
+  .home-randevu-btn {
+    padding: 8px 14px !important;
+    font-size: 13px !important;
+  }
+
+  /* ─ Hero iki sütun → tek sütun ─ */
+  .hero-ic {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+  .hero h1 {
+    font-size: 32px !important;
+  }
+
+  /* ─ Form satır gridi tek sütuna ─ */
+  .form-satir {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── Mobil: 480px ────────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .takvim-izgara {
+    grid-template-columns: repeat(2, 1fr) !important;
+  }
+  .islem-ozet {
+    grid-template-columns: 1fr !important;
+  }
+}
+
+/* ── TopBar (arama + bildirim zili) ─────────────────────────── */
+@media (max-width: 768px) {
+  .dash-topbar       { top: 56px !important; }
+  .topbar-arama-yazi { display: none !important; }
+  .topbar-arama-kbd  { display: none !important; }
+}
+
+/* ── İkili grid → tek sütun ─────────────────────────────────── */
+@media (max-width: 768px) {
+  .ikili-grid       { grid-template-columns: 1fr !important; }
+  .rapor-ikili-grid { grid-template-columns: 1fr !important; }
+}
+
+/* ── Genel Arama modal ───────────────────────────────────────── */
+@media (max-width: 600px) {
+  .genel-arama-overlay { padding-top: 16px !important; align-items: flex-start !important; }
+  .genel-arama-kutu    { margin: 0 8px !important; max-width: calc(100% - 16px) !important; max-height: 85vh !important; }
+}
+
+/* ── Bildirim paneli ─────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .bildirim-panel { right: -60px !important; width: 300px !important; }
+}
+
+/* ── Site Ayarları modal ─────────────────────────────────────── */
+@media (max-width: 768px) {
+  .siteayar-modal-kutu { width: calc(100vw - 32px) !important; max-height: 90vh !important; overflow-y: auto !important; }
+}
+
+/* ── Raporlar tablo yatay kaydırma ──────────────────────────── */
+@media (max-width: 768px) {
+  .rapor-tablo-sarici { overflow-x: auto !important; }
+}
