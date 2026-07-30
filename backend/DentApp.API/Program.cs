@@ -8,6 +8,11 @@ using DentApp.API.Data;
 using DentApp.API.DTOs;
 using DentApp.API.Models;
 
+// Render gibi sandbox ortamlarında inotify limiti çok düşük olduğu için
+// appsettings.json dosya izleyicisi (FileSystemWatcher) segfault'a yol açıyor.
+// CreateBuilder çağrılmadan önce kapatılmalı.
+Environment.SetEnvironmentVariable("DOTNET_hostBuilder__reloadConfigOnChange", "false");
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Render gibi platformlar dinlenecek portu PORT ortam değişkeniyle verir.
